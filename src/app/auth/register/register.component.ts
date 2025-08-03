@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterFormService } from './register-form.service';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -15,13 +16,25 @@ export class RegisterComponent {
 
   form = this.registerForm.inicializarForm(false);
 
+  cargando = signal(false);
+
   crearCuenta() {
+    this.cargando.set(true);
     if (this.form.invalid) {
+      this.cargando.set(false);
+
       return;
     }
 
     const payload = this.form.getRawValue();
 
-    this.authService.postRegister(payload).subscribe();
+    this.authService
+      .postRegister(payload)
+      .pipe(
+        finalize(() => {
+          this.cargando.set(false);
+        })
+      )
+      .subscribe();
   }
 }

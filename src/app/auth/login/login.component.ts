@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { LoginFormService } from './login-form.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -15,13 +16,25 @@ export default class LoginComponent {
 
   form = this.loginForm.inicializarForm(false);
 
+  cargando = signal(false);
+
   ingresar() {
+    this.cargando.set(true);
+
     if (this.form.invalid) {
+      this.cargando.set(false);
       return;
     }
 
     const payload = this.form.getRawValue();
 
-    this.authService.postLogin(payload).subscribe();
+    this.authService
+      .postLogin(payload)
+      .pipe(
+        finalize(() => {
+          this.cargando.set(false);
+        })
+      )
+      .subscribe();
   }
 }
