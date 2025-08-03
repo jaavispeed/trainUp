@@ -14,4 +14,14 @@ export default class LoginComponent {
   loginForm = inject(LoginFormService);
 
   form = this.loginForm.inicializarForm(false);
+
+  ingresar() {
+    if (this.form.invalid) {
+      return;
+    }
+
+    const payload = this.form.getRawValue();
+
+    this.authService.postLogin(payload).subscribe();
+  }
 }

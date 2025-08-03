@@ -7,8 +7,8 @@ import {
 } from '@angular/forms';
 
 export interface LoginForm {
-  username: FormControl<string | null>;
-  password: FormControl<string | null>;
+  username: FormControl<string>;
+  password: FormControl<string>;
 }
 
 export class LoginFormService {
@@ -16,12 +16,14 @@ export class LoginFormService {
 
   inicializarForm(disabled = true): FormGroup<LoginForm> {
     return this.fb.group<LoginForm>({
-      username: new FormControl<string>({ value: '', disabled: disabled }, [
-        Validators.required,
-      ]),
-      password: new FormControl<string>({ value: '', disabled: disabled }, [
-        Validators.required,
-      ]),
+      username: new FormControl<string>({ value: '', disabled: disabled }, {
+        validators: [Validators.required],
+        nonNullable: true,
+      }),
+      password: new FormControl<string>({ value: '', disabled: disabled }, {
+        validators: [Validators.required],
+        nonNullable: true,
+      }),
     });
   }
 }
