@@ -19,26 +19,41 @@ export class RegisterFormService {
 
   inicializarForm(disabled = true): FormGroup<RegisterForm> {
     return this.fb.group<RegisterForm>({
-      name: new FormControl<string>({ value: '', disabled: disabled }, {
-        validators: [Validators.required],
-        nonNullable: true,
-      }),
-      email: new FormControl<string>({ value: '', disabled: disabled }, {
-        validators: [Validators.required, Validators.email],
-        nonNullable: true,
-      }),
-      username: new FormControl<string>({ value: '', disabled: disabled }, {
-        validators: [Validators.required],
-        nonNullable: true,
-      }),
-      password: new FormControl<string>({ value: '', disabled: disabled }, {
-        validators: [Validators.required],
-        nonNullable: true,
-      }),
-      role: new FormControl<string>({ value: 'user', disabled: disabled }, {
-        validators: [Validators.required],
-        nonNullable: true,
-      }),
+      name: new FormControl<string>(
+        { value: '', disabled: disabled },
+        {
+          validators: [Validators.required],
+          nonNullable: true,
+        }
+      ),
+      email: new FormControl<string>(
+        { value: '', disabled: disabled },
+        {
+          validators: [Validators.required, Validators.email],
+          nonNullable: true,
+        }
+      ),
+      username: new FormControl<string>(
+        { value: '', disabled: disabled },
+        {
+          validators: [Validators.required],
+          nonNullable: true,
+        }
+      ),
+      password: new FormControl<string>(
+        { value: '', disabled: disabled },
+        {
+          validators: [Validators.required],
+          nonNullable: true,
+        }
+      ),
+      role: new FormControl<string>(
+        { value: 'user', disabled: disabled },
+        {
+          validators: [Validators.required],
+          nonNullable: true,
+        }
+      ),
     });
   }
 }

@@ -23,5 +23,5 @@ export class RegisterComponent {
     const payload = this.form.getRawValue();
 
     this.authService.postRegister(payload).subscribe();
-}
+  }
 }

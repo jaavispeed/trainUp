@@ -16,14 +16,20 @@ export class LoginFormService {
 
   inicializarForm(disabled = true): FormGroup<LoginForm> {
     return this.fb.group<LoginForm>({
-      username: new FormControl<string>({ value: '', disabled: disabled }, {
-        validators: [Validators.required],
-        nonNullable: true,
-      }),
-      password: new FormControl<string>({ value: '', disabled: disabled }, {
-        validators: [Validators.required],
-        nonNullable: true,
-      }),
+      username: new FormControl<string>(
+        { value: '', disabled: disabled },
+        {
+          validators: [Validators.required],
+          nonNullable: true,
+        }
+      ),
+      password: new FormControl<string>(
+        { value: '', disabled: disabled },
+        {
+          validators: [Validators.required],
+          nonNullable: true,
+        }
+      ),
     });
   }
 }
