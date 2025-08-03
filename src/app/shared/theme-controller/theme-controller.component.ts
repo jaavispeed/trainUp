@@ -9,7 +9,7 @@ export class ThemeControllerComponent implements OnInit {
   darkMode = signal(false);
 
   ngOnInit() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'winter';
     this.darkMode.set(savedTheme === 'dark');
     this.setTheme(savedTheme);
   }
@@ -18,7 +18,7 @@ export class ThemeControllerComponent implements OnInit {
     const checked = (event.target as HTMLInputElement).checked;
     this.darkMode.set(checked);
 
-    const newTheme = checked ? 'dark' : 'light';
+    const newTheme = checked ? 'dark' : 'winter';
     this.setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
   }
