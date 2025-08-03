@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
-import { HeroPageComponent } from './hero/pages/hero-page/hero-page.component';
-import LoginComponent from './auth/components/login/login.component';
+
+import LoginComponent from './auth/login/login.component';
+import { HeroPageComponent } from './components/hero/hero.component';
 
 export const routes: Routes = [
   {
