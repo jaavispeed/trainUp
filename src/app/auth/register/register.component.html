@@ -8,7 +8,7 @@
   <div class="flex flex-1 justify-center items-center flex-col">
     <img
       src="OnlyFace.png"
-      class="w-42 sm:w-64 md:w-42 rounded-lg -mb-5"
+      class="w-42 sm:w-64 md:w-42 rounded-lg -mb-5 animate__animated animate__fadeInLeft"
       alt="Robot"
     />
     <form [formGroup]="form" autocomplete="off">
@@ -73,14 +73,20 @@
           <input type="password" class="input" placeholder="Contraseña" />
         </div>
 
-        <p class="text-gray-600">
+        <p>
           ¿Ya tienes cuenta?
-          <a routerLink="/register" class="text-blue-600 hover:underline">
+          <a
+            routerLink="/login"
+            class="text-blue-600 hover:underline font-bold"
+          >
             Iniciar sesión
           </a>
         </p>
 
-        <button class="btn btn-neutral mt-4 text-white" (click)="crearCuenta()">
+        <button
+          class="btn btn-neutral w-full sm:w-auto text-white transition duration-300 transform hover:scale-105 hover:shadow-lg"
+          (click)="crearCuenta()"
+        >
           Crear cuenta
         </button>
         <button class="btn btn-ghost" routerLink="#">Volver</button>

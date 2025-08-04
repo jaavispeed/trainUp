@@ -8,7 +8,7 @@
   <div class="flex flex-1 justify-center items-center flex-col">
     <img
       src="OnlyFace.png"
-      class="w-42 sm:w-64 md:w-42 rounded-lg -mb-5"
+      class="w-42 sm:w-64 md:w-42 rounded-lg -mb-5 animate__animated animate__fadeInLeft"
       alt="Robot"
     />
     <form [formGroup]="form" autocomplete="off">
@@ -42,14 +42,20 @@
           <p class="text-error">La contraseña es requerida</p>
           }
         </div>
-        <p class="text-gray-600">
+        <p>
           ¿No tienes cuenta?
-          <a routerLink="/register" class="text-blue-600 hover:underline">
+          <a
+            routerLink="/register"
+            class="text-blue-600 hover:underline font-bold"
+          >
             Regístrate
           </a>
         </p>
 
-        <button class="btn btn-neutral mt-4 text-white" (click)="ingresar()">
+        <button
+          class="btn btn-neutral w-full sm:w-auto text-white transition duration-300 transform hover:scale-105 hover:shadow-lg"
+          (click)="ingresar()"
+        >
           Iniciar sesión
         </button>
         <button class="btn btn-ghost" routerLink="#">Volver</button>
@@ -59,6 +65,5 @@
       class="fixed bottom-4 left-1/2 -translate-x-1/2 sm:left-4 sm:translate-x-0 z-50"
     ></app-theme-controller>
   </div>
-
   }
 </div>
