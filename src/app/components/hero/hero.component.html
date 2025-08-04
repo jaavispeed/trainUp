@@ -1,18 +1,23 @@
 <div class="flex flex-col min-h-screen">
   <app-navbar></app-navbar>
 
-  <div class="hero flex-grow relative">
-    <div class="hero-content flex-col lg:flex-row-reverse">
-      <img src="entrenador.png" class="max-w-sm rounded-lg" />
-      <div class="text-center sm:text-left">
-        <h1 class="text-4xl sm:text-5xl font-bold">
-          Gestiona alumnos y crea entrenamientos personalizados
+  <div class="hero flex-grow px-4 py-8 sm:py-12">
+    <div class="hero-content flex flex-col lg:flex-row-reverse items-center gap-6">
+      <img
+        src="robot3dGym.png"
+        class="w-48 sm:w-64 md:w-80 rounded-lg"
+        alt="Robot en gimnasio"
+      />
+
+      <div class="text-center sm:text-left max-w-xl">
+        <h1 class="text-3xl sm:text-4xl font-bold leading-tight">
+          <span class="text-primary font-extrabold">Bienvenido</span>, optimiza
+          tu trabajo con gestión y entrenamientos a medida
         </h1>
-        <div
-          class="mt-4 flex flex-col sm:flex-row items-center sm:items-start gap-1"
-        >
-          <button class="btn btn-neutral">Entrar</button>
-          <button class="btn btn-neutral mt-2 sm:mt-0">Registrarme</button>
+
+        <div class="mt-6 flex flex-col sm:flex-row sm:justify-start items-center gap-2">
+          <button class="btn btn-neutral w-full sm:w-auto text-white">Iniciar sesión</button>
+          <button class="btn btn-neutral w-full sm:w-auto text-white">Crear cuenta</button>
         </div>
       </div>
     </div>
