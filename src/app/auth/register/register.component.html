@@ -1,61 +1,79 @@
-<div class="flex items-center justify-center h-screen">
+<div class="flex flex-col min-h-screen">
+  <app-navbar></app-navbar>
+
   @if(cargando()){
   <span class="loading loading-ring loading-xl"></span>
   }@else {
-  <form [formGroup]="form" autocomplete="off">
-    <fieldset
-      class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 shadow-2xl"
-      autocomplete="off"
-    >
-      <div>
-        <label class="label">Nombre real</label>
-        <input
-          type="text"
-          class="input"
-          placeholder="Javier"
-          formControlName="name"
-        />
-      </div>
 
-      <div>
-        <label class="label">Nombre de usuario</label>
-        <input
-          type="text"
-          class="input"
-          placeholder="Usuario"
-          formControlName="username"
-        />
-      </div>
+  <div class="flex flex-1 justify-center items-center">
+    <form [formGroup]="form" autocomplete="off">
+      <fieldset
+        class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 shadow-2xl animate__animated animate__fadeInLeft"
+        autocomplete="off"
+      >
+        <div>
+          <label class="label">Nombre real</label>
+          <input
+            type="text"
+            class="input"
+            placeholder="Javier"
+            formControlName="name"
+          />
+        </div>
 
-      <div>
-        <label class="label">Email</label>
-        <input
-          type="email"
-          class="input"
-          placeholder="cuenta@gmail.com"
-          formControlName="email"
-        />
-      </div>
+        <div>
+          <label class="label">Nombre de usuario</label>
+          <input
+            type="text"
+            class="input"
+            placeholder="Usuario"
+            formControlName="username"
+          />
+          @if(form.get('username')?.hasError('required') &&
+          form.get('username')?.touched) {
+          <p class="text-error">El usuario es requerido</p>
+          }
+        </div>
 
-      <div>
-        <label class="label">Contraseña</label>
-        <input
-          type="password"
-          class="input"
-          placeholder="Contraseña"
-          formControlName="password"
-        />
-      </div>
+        <div>
+          <label class="label">Email</label>
+          <input
+            type="email"
+            class="input"
+            placeholder="cuenta@gmail.com"
+            formControlName="email"
+          />
+          @if(form.get('email')?.hasError('required') &&
+          form.get('email')?.touched) {
+          <p class="text-error">El email es requerido</p>
+          }
+        </div>
 
-      <div>
-        <label class="label">Confirma tu Contraseña</label>
-        <input type="password" class="input" placeholder="Contraseña" />
-      </div>
+        <div>
+          <label class="label">Contraseña</label>
+          <input
+            type="password"
+            class="input"
+            placeholder="Contraseña"
+            formControlName="password"
+          />
+          @if(form.get('password')?.hasError('required') &&
+          form.get('password')?.touched) {
+          <p class="text-error">La contraseña es requerida</p>
+          }
+        </div>
 
-      <button class="btn btn-neutral mt-4" (click)="crearCuenta()">
-        Crear cuenta
-      </button>
-    </fieldset>
-  </form>
+        <div>
+          <label class="label">Confirma tu Contraseña</label>
+          <input type="password" class="input" placeholder="Contraseña" />
+        </div>
+
+        <button class="btn btn-neutral mt-4" (click)="crearCuenta()">
+          Crear cuenta
+        </button>
+      </fieldset>
+    </form>
+  </div>
+
   }
 </div>

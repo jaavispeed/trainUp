@@ -3,10 +3,11 @@ import { AuthService } from '../services/auth.service';
 import { LoginFormService } from './login-form.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { finalize } from 'rxjs';
+import { NavbarPageComponent } from '../../shared/navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NavbarPageComponent],
   providers: [AuthService, LoginFormService],
   templateUrl: './login.component.html',
 })

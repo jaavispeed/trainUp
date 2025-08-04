@@ -3,10 +3,11 @@ import { AuthService } from '../services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterFormService } from './register-form.service';
 import { finalize } from 'rxjs';
+import { NavbarPageComponent } from "../../shared/navbar/navbar.component";
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NavbarPageComponent],
   providers: [AuthService, RegisterFormService],
   templateUrl: './register.component.html',
 })

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -7,6 +7,11 @@ import { RouterOutlet } from '@angular/router';
   providers: [],
   templateUrl: './app.component.html',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'trainup';
+
+  ngOnInit(): void {
+    const savedTheme = localStorage.getItem('theme') || 'winter';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }
 }
