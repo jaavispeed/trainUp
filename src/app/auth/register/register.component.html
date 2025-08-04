@@ -5,7 +5,12 @@
   <span class="loading loading-ring loading-xl"></span>
   }@else {
 
-  <div class="flex flex-1 justify-center items-center">
+  <div class="flex flex-1 justify-center items-center flex-col">
+    <img
+      src="OnlyFace.png"
+      class="w-42 sm:w-64 md:w-42 rounded-lg -mb-5"
+      alt="Robot"
+    />
     <form [formGroup]="form" autocomplete="off">
       <fieldset
         class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 shadow-2xl animate__animated animate__fadeInLeft"
@@ -68,7 +73,7 @@
           <input type="password" class="input" placeholder="Contraseña" />
         </div>
 
-        <p class=" text-gray-600">
+        <p class="text-gray-600">
           ¿Ya tienes cuenta?
           <a routerLink="/register" class="text-blue-600 hover:underline">
             Iniciar sesión
