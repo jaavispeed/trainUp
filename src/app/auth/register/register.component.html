@@ -68,12 +68,22 @@
           <input type="password" class="input" placeholder="Contraseña" />
         </div>
 
-        <button class="btn btn-neutral mt-4" (click)="crearCuenta()">
+        <p class=" text-gray-600">
+          ¿Ya tienes cuenta?
+          <a routerLink="/register" class="text-blue-600 hover:underline">
+            Iniciar sesión
+          </a>
+        </p>
+
+        <button class="btn btn-neutral mt-4 text-white" (click)="crearCuenta()">
           Crear cuenta
         </button>
+        <button class="btn btn-ghost" routerLink="#">Volver</button>
       </fieldset>
     </form>
+    <app-theme-controller
+      class="fixed bottom-4 left-1/2 -translate-x-1/2 sm:left-4 sm:translate-x-0 z-50"
+    ></app-theme-controller>
   </div>
-
   }
 </div>

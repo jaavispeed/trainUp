@@ -4,10 +4,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterFormService } from './register-form.service';
 import { finalize } from 'rxjs';
 import { NavbarPageComponent } from "../../shared/navbar/navbar.component";
+import { RouterLink } from '@angular/router';
+import { ThemeControllerComponent } from '../../shared/theme-controller/theme-controller.component';
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule, NavbarPageComponent],
+  imports: [ReactiveFormsModule, NavbarPageComponent, RouterLink, ThemeControllerComponent],
   providers: [AuthService, RegisterFormService],
   templateUrl: './register.component.html',
 })

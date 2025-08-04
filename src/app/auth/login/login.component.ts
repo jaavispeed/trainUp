@@ -4,10 +4,12 @@ import { LoginFormService } from './login-form.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { finalize } from 'rxjs';
 import { NavbarPageComponent } from '../../shared/navbar/navbar.component';
+import { RouterLink } from '@angular/router';
+import { ThemeControllerComponent } from '../../shared/theme-controller/theme-controller.component';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, NavbarPageComponent],
+  imports: [ReactiveFormsModule, NavbarPageComponent, RouterLink, ThemeControllerComponent],
   providers: [AuthService, LoginFormService],
   templateUrl: './login.component.html',
 })

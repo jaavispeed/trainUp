@@ -4,6 +4,8 @@
   @if(cargando()){
   <span class="loading loading-ring loading-xl"></span>
   }@else {
+
+
   <div class="flex flex-1 justify-center items-center">
     <form [formGroup]="form" autocomplete="off">
       <fieldset
@@ -36,12 +38,22 @@
           <p class="text-error">La contraseña es requerida</p>
           }
         </div>
+        <p class=" text-gray-600">
+          ¿No tienes cuenta?
+          <a routerLink="/register" class="text-blue-600 hover:underline">
+            Regístrate
+          </a>
+        </p>
 
-        <button class="btn btn-neutral mt-4" (click)="ingresar()">
+        <button class="btn btn-neutral mt-4 text-white" (click)="ingresar()">
           Iniciar sesión
         </button>
+        <button class="btn btn-ghost" routerLink="#">Volver</button>
       </fieldset>
     </form>
+    <app-theme-controller
+      class="fixed bottom-4 left-1/2 -translate-x-1/2 sm:left-4 sm:translate-x-0 z-50"
+    ></app-theme-controller>
   </div>
   }
 </div>
